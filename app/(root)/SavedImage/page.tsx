@@ -6,7 +6,7 @@ import { useSession } from "@/app/context/SessionContext";
 import { useRouter } from "next/navigation";
 import { getSavedImages } from "@/app/actions/show";
 import UserAvatar from "../components/UserAvatar";
-import { Search, LogOut, Menu, Heart, Download } from "lucide-react";
+import { Search, LogOut, Menu, Heart } from "lucide-react";
 
 type ImageResult = {
   id: number;

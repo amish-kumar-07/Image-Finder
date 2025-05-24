@@ -1,11 +1,8 @@
 "use client";
 import { Search, Chrome } from 'lucide-react';
 import { SignIn } from '@/app/actions/SignIn';
-import { useSession } from "@/app/context/SessionContext";
 
 export default function Page() {
-  const session = useSession();
-
   const handleSignIn = async () => {
     await SignIn();
   };
@@ -41,12 +38,12 @@ export default function Page() {
         
         {/* Sign Up Link */}
         <div className="text-center">
-          <p className="text-sm text-gray-400">
-            Don't have an account?{' '}
-            <a href="#" className="font-medium text-blue-400 hover:text-blue-300 transition-colors duration-200">
-              Sign up
-            </a>
-          </p>
+            <p className="text-sm text-gray-400">
+              Don&apos;t have an account?{' '}
+              <a href="#" className="font-medium text-blue-400 hover:text-blue-300 transition-colors duration-200">
+                Sign up
+              </a>
+            </p>
         </div>
 
         {/* Footer */}

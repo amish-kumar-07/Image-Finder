@@ -11,7 +11,6 @@ import {
   LogOut,
   Menu,
   X,
-  Download,
   Heart,
 } from "lucide-react";
 
@@ -52,14 +51,12 @@ export default function ImageSearchDashboard() {
       if (Array.isArray(data.results) && data.results.length > 0) {
         setResults(data.results);
       } else {
-        setResults(fallbackImages);
+        setResults(fallbackImages); // ✅ fallback if API fails or no data
       }
-    } catch (error) {
-      console.error("Error fetching images:", error);
-      setResults(fallbackImages);
-    } finally {
-      setIsLoading(false);
-    }
+      } catch (error) {
+        console.error("Search failed:", error);
+        setResults(fallbackImages); // ✅ fallback on error
+      }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
