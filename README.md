@@ -22,11 +22,11 @@ A modern web app to search, save, and manage high-quality images using the **Uns
 
 ## ⚠️ Note on Authentication
 
-> ❗ Since the app uses **Google OAuth** for login and is not yet verified for public use by Google, it is currently in **testing mode**. This means **only 2 specific test Gmail accounts** (added manually in the Google Cloud Console) can access the app.
+> ❗ This app uses **Google OAuth** for login and is currently in **testing mode**.  
+> Only **2 specific test Gmail accounts** (added manually in the Google Cloud Console) are allowed to log in during this phase.
 
-If you're not one of the pre-approved testers, you will encounter a "This app is not verified" error from Google when trying to log in.
-
-To make it publicly accessible, the app would need to go through Google’s OAuth verification process (which allows up to 100 users in testing, or unlimited after full verification).
+If you are not one of the approved test users, you'll encounter a **"This app is not verified"** error from Google.  
+This limitation is due to Google’s policy of allowing a maximum of **100 users** in OAuth testing mode unless the app undergoes **OAuth verification**.
 
 ---
 
@@ -44,11 +44,8 @@ To make it publicly accessible, the app would need to go through Google’s OAut
 ## 📸 Screenshots
 
 | Home Page | Search Results | Saved Images |
-|----------|----------------|--------------|
-| ![Home](![Screenshot 2025-05-24 072309](https://github.com/user-attachments/assets/3652d5fd-afa1-4641-994f-5c08448cbe22)
-) | ![Search](![Screenshot 2025-05-24 081345](https://github.com/user-attachments/assets/0de88cb4-564d-4c31-9c74-2baeebb0c229)
-) | ![Saved](![Screenshot 2025-05-24 072257](https://github.com/user-attachments/assets/25f3fa5b-419a-4417-a732-99bbf815cf3d)
-) |
+|-----------|----------------|--------------|
+| ![Home](https://github.com/user-attachments/assets/3652d5fd-afa1-4641-994f-5c08448cbe22) | ![Search](https://github.com/user-attachments/assets/0de88cb4-564d-4c31-9c74-2baeebb0c229) | ![Saved](https://github.com/user-attachments/assets/25f3fa5b-419a-4417-a732-99bbf815cf3d) |
 
 ---
 
@@ -101,7 +98,7 @@ Create a `.env.local` file and configure the following:
 # Unsplash
 UNSPLASH_ACCESS_KEY=your_unsplash_api_key
 
-# Auth.js (e.g. GitHub or Email Provider)
+# Auth.js (Google Provider)
 AUTH_SECRET=your_auth_secret
 AUTH_PROVIDER_CLIENT_ID=your_client_id
 AUTH_PROVIDER_CLIENT_SECRET=your_client_secret
@@ -135,11 +132,11 @@ Visit `http://localhost:3000`.
 
 ## 🔒 Authentication
 
-This project uses `Auth.js` (formerly NextAuth.js) to handle authentication.
+This project uses `Auth.js` (formerly NextAuth.js) for secure authentication.
 
-* Social login support (Google, etc.)
+* Social login via **Google**
 * JWT-based session management
-* Test users limited to pre-approved emails while in OAuth testing mode
+* Only pre-approved Gmail users can log in in testing mode
 
 ---
 
@@ -152,11 +149,9 @@ This project is licensed under the [MIT License](LICENSE).
 ## 🙌 Acknowledgements
 
 * 📷 [Unsplash](https://unsplash.com/) – Free image API
-* 🔐 [Auth.js](https://authjs.dev/) – Secure authentication
-* 🧪 [Drizzle ORM](https://orm.drizzle.team/) – Type-safe database access
+* 🔐 [Auth.js](https://authjs.dev/) – Authentication framework
+* 🧪 [Drizzle ORM](https://orm.drizzle.team/) – Type-safe PostgreSQL ORM
 * 🐘 [Neon](https://neon.tech/) – Serverless PostgreSQL
-* ⚡ [Next.js](https://nextjs.org/) – Fullstack React framework
-* 🎨 [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS
-
-```
+* ⚡ [Next.js](https://nextjs.org/) – Fullstack React Framework
+* 🎨 [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework
 
