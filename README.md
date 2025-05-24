@@ -54,22 +54,38 @@ This limitation is due to Google’s policy of allowing a maximum of **100 users
 ```
 
 app/
-├── page.tsx              # Homepage with search functionality
-├── api/
-│   ├── search/route.ts   # Fetch images from Unsplash
-│   ├── save/route.ts     # Save image to DB
-│   ├── delete/route.ts   # Delete image from DB
-│   └── auth/\[...nextauth].ts # Auth.js configuration
-
-components/
-├── SearchInput.tsx       # Input box for searching
-├── ImageGrid.tsx         # Display search results
-├── SavedImages.tsx       # Show user’s saved images
-
-lib/
-├── unsplash.ts           # Unsplash fetch logic
-├── db.ts                 # Neon & Drizzle setup
-├── auth.ts               # JWT & user session logic
+├── layout.tsx                        # Main layout file
+├── SearchInput.tsx                   # Input box for searching images
+├── ImageGrid.tsx                     # Component to display search results
+├── SavedImages.tsx                   # Component to show user's saved images
+│
+├── (root)/                           # Root folder (if part of app directory routing)
+│   ├── SavedImage/                   # Page or component folder
+│   └── Dashboard/                    # Dashboard page or component
+│
+├── Components/                       # UI and layout components
+│   └── UserAvatar.tsx
+│
+├── context/                          # Context providers
+│   └── SessionContext.tsx
+│
+├── db/                               # Database configuration and schema
+│   ├── index.ts                      # DB connection setup
+│   └── schema.ts                     # DB schema (e.g., for saved images)
+│
+├── api/                              # API route handlers
+│   ├── search/route.ts               # Fetch images from Unsplash API
+│   ├── saveUser/route.ts             # Save image to the database
+│   ├── delete/route.ts               # Delete image from the database
+│   └── auth/[...nextauth].ts         # NextAuth.js authentication config
+│
+├── action/                           # Server actions
+│   ├── SignIn.ts
+│   ├── logout.ts
+│   └── show.ts
+├──drizzle/
+├── auth.ts                           # auth integration or utility
+├── drizzle.config.ts                 # Drizzle configuration
 
 ````
 
