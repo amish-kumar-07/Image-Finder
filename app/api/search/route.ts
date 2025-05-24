@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: 'Query is required' }, { status: 400 });
   }
  try {
-    const res = await fetch(`https://api.unsplash.com/search/photos?query=${query}&per_page=12&client_id=${UNSPLASH_ACCESS_KEY}`);
+    const res = await fetch(`https://api.unsplash.com/search/photos?query=${query}&per_page=20&client_id=${UNSPLASH_ACCESS_KEY}`);
 
     if (!res.ok) {
       throw new Error('Failed to fetch from Unsplash');
